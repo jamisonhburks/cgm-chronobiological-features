@@ -1,5 +1,9 @@
 # Chronobiologically-Informed Features from CGM Data
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
+[![DOI](https://img.shields.io/badge/DOI-10.1371%2Fjournal.pdig.0000815-blue.svg)](https://doi.org/10.1371/journal.pdig.0000815)
+
 Analysis code for:
 
 > Burks JH, Joe L, Kanjaria K, Monsivais C, O'Laughlin K, Smarr BL.
