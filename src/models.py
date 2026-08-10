@@ -38,7 +38,8 @@ def fit_predict(model, Xtrain, ytrain, Xtest):
     Feature selection (dropping the identifier/demographic columns) is applied
     internally via :func:`data.feature_matrix`, so callers pass the full frames.
     """
+    Xtest_features = feature_matrix(Xtest)
     model.fit(feature_matrix(Xtrain), ytrain)
-    preds = model.predict(feature_matrix(Xtest))
-    proba = model.predict_proba(feature_matrix(Xtest))
+    preds = model.predict(Xtest_features)
+    proba = model.predict_proba(Xtest_features)
     return preds, proba
