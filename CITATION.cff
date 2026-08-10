@@ -17,7 +17,7 @@ authors:
     given-names: Benjamin L.
     email: bsmarr@ucsd.edu
 license: MIT
-repository-code: ""  # add the GitHub URL once created
+repository-code: "https://github.com/jamisonhburks/cgm-chronobiological-features"
 preferred-citation:
   type: article
   title: "Chronobiologically-informed features from CGM data provide unique information for XGBoost prediction of longer-term glycemic dysregulation in 8,000 individuals with type-2 diabetes"
