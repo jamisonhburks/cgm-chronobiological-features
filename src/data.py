@@ -7,10 +7,9 @@ coloring) so those choices live in exactly one place.
 Two distinct feature groupings are used in the paper and both are made explicit
 here:
 
-* **Model 1 vs Model 2** -- Model 1 uses only whole-day *statistical* summaries
-  (:data:`MODEL1_STATISTICAL_FEATURES`); Model 2 adds the intraday, complexity,
-  and temporal features. Model 1 is obtained by dropping
-  :data:`MODEL1_DROP_FEATURES`.
+* **Model 1 vs Model 2** -- Model 1 uses only whole-day *statistical* summaries;
+  Model 2 adds the intraday, complexity, and temporal features. Model 1 is
+  obtained by dropping :data:`MODEL1_DROP_FEATURES`.
 * **Feature *type* (for PCA / importance coloring)** -- every feature is either
   "statistical" or "complexity/temporal"; the latter is
   :data:`COMPLEXITY_TEMPORAL_FEATURES` (the CI and Poincaré/SD families). Note
