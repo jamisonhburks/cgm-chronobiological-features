@@ -17,7 +17,15 @@ authors:
     given-names: Benjamin L.
     email: bsmarr@ucsd.edu
 license: MIT
+version: 1.0.0
 repository-code: "https://github.com/jamisonhburks/cgm-chronobiological-features"
+keywords:
+  - continuous glucose monitoring
+  - CGM
+  - type 2 diabetes
+  - XGBoost
+  - chronobiology
+  - multiscale complexity
 preferred-citation:
   type: article
   title: "Chronobiologically-informed features from CGM data provide unique information for XGBoost prediction of longer-term glycemic dysregulation in 8,000 individuals with type-2 diabetes"
