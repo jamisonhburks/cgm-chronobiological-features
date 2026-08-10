@@ -19,6 +19,8 @@ here:
 
 from __future__ import annotations
 
+import os
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -78,6 +80,11 @@ def load_dataset(path: str = DEFAULT_DATA_PATH, statistical_only: bool = False) 
 
     Rows with any missing value are dropped, matching the original analysis.
     """
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"{path!r} not found. Download processed_CGM_data_for_ML.parquet from the "
+            "data deposit (DOI: 10.6075/J0BR8SK9) and place it in the repository root."
+        )
     data = pd.read_parquet(path)
     if statistical_only:
         data = data.drop(columns=MODEL1_DROP_FEATURES)
