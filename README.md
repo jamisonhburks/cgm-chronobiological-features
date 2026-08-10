@@ -67,6 +67,8 @@ continuous glucose monitoring recordings from 8,000 participants.
 ## Setup
 
 ```bash
+git clone https://github.com/jamisonhburks/cgm-chronobiological-features.git
+cd cgm-chronobiological-features
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
