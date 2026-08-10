@@ -24,3 +24,10 @@ __pycache__/
 .venv/
 venv/
 env/
+*.egg-info/
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
