@@ -7,6 +7,8 @@ Public API for the notebook to import, e.g.::
                      cross_validate_report, plot_calibration_curves)
 """
 
+__version__ = "1.0.0"
+
 from .data import (COMPLEXITY_FEATURES, COMPLEXITY_TEMPORAL_FEATURES,
                    DEFAULT_DATA_PATH, INTRADAY_STAT_FEATURES, LABEL_COLUMN,
                    META_COLUMNS, MODEL1_DROP_FEATURES, TEMPORAL_FEATURES,
