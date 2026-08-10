@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the associated publication and dataset."
+title: "Chronobiologically-Informed Features from CGM Data — analysis code"
+type: software
+authors:
+  - family-names: Burks
+    given-names: Jamison H.
+  - family-names: Joe
+    given-names: Leslie
+  - family-names: Kanjaria
+    given-names: Karina
+  - family-names: Monsivais
+    given-names: Carlos
+  - family-names: O'Laughlin
+    given-names: Kate
+  - family-names: Smarr
+    given-names: Benjamin L.
+    email: bsmarr@ucsd.edu
+license: MIT
+repository-code: ""  # add the GitHub URL once created
+preferred-citation:
+  type: article
+  title: "Chronobiologically-informed features from CGM data provide unique information for XGBoost prediction of longer-term glycemic dysregulation in 8,000 individuals with type-2 diabetes"
+  authors:
+    - family-names: Burks
+      given-names: Jamison H.
+    - family-names: Joe
+      given-names: Leslie
+    - family-names: Kanjaria
+      given-names: Karina
+    - family-names: Monsivais
+      given-names: Carlos
+    - family-names: O'Laughlin
+      given-names: Kate
+    - family-names: Smarr
+      given-names: Benjamin L.
+  journal: "PLOS Digital Health"
+  year: 2025
+  doi: 10.1371/journal.pdig.0000815
+references:
+  - type: data
+    title: "Data from: Chronobiologically-Informed Features from CGM Data Provide Unique Information for XGBoost Prediction of Longer-Term Glycemic Dysregulation in 8,000 Individuals with Type-2 Diabetes"
+    authors:
+      - family-names: Burks
+        given-names: Jamison H.
+      - family-names: Smarr
+        given-names: Benjamin L.
+    doi: 10.6075/J0BR8SK9
+    year: 2025

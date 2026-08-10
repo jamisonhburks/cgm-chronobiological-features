@@ -1,0 +1,26 @@
+# Data file — download from the Dryad/UCSD data deposit (DOI: 10.6075/J0BR8SK9)
+# and place at the repository root. Too large for GitHub (331 MB > 100 MB limit).
+processed_CGM_data_for_ML.parquet
+*.parquet
+
+# Excluded supplementary notebook (76 MB of embedded figures; not part of this package)
+LongTermMemory_Again.ipynb
+
+# The published article is not redistributed here — see the PLOS Digital Health link
+# in README.md (DOI: 10.1371/journal.pdig.0000815)
+Chronobiologically_Informed_Features_CGM.pdf
+*.pdf
+
+# OS / editor cruft
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/

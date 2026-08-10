@@ -1,0 +1,22 @@
+# Analysis environment for ComplexityML.ipynb
+# Python 3.11.9
+#
+# Versions pinned to those reported in the associated publication
+# (Burks et al., PLOS Digital Health, 2025):
+pandas==2.2.2
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.5.0
+xgboost==2.1.2
+matplotlib==3.8.4
+statsmodels==0.14.2
+
+# Additional packages imported by the notebook (versions not pinned in the
+# publication; latest compatible releases are fine):
+seaborn
+adjustText
+jupyter
+
+# Parquet engines (either is sufficient to read the data file):
+pyarrow
+fastparquet
