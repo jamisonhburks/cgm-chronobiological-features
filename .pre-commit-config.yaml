@@ -1,0 +1,10 @@
+# Pre-commit hooks. Activate once per clone with:
+#     pip install pre-commit && pre-commit install
+#
+# nbstripout removes notebook OUTPUTS before every commit, so patient-level data
+# embedded in cell outputs can never be committed to this public repository.
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: "0.7.1"
+    hooks:
+      - id: nbstripout
