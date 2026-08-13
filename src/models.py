@@ -11,15 +11,15 @@ import xgboost as xgb
 from .data import feature_matrix
 
 #: Best configuration from the grid search in the paper.
-DEFAULT_PARAMS = dict(
-    n_estimators=500,
-    max_depth=3,
-    learning_rate=1,
-    objective="multi:softmax",
-    enable_categorical=True,
-    tree_method="auto",
-    importance_type="gain",
-)
+DEFAULT_PARAMS = {
+    "n_estimators": 500,
+    "max_depth": 3,
+    "learning_rate": 1,
+    "objective": "multi:softmax",
+    "enable_categorical": True,
+    "tree_method": "auto",
+    "importance_type": "gain",
+}
 
 
 def build_classifier(random_state: int = 42, **overrides) -> xgb.XGBClassifier:

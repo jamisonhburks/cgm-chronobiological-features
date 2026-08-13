@@ -6,7 +6,6 @@ the figure (as both .png and .pdf, per project convention).
 
 from __future__ import annotations
 
-import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -115,8 +114,8 @@ def pca_biplot(pca, scores, feature_names,
 
     ax.set_xlim(-0.4, 0.4)
     ax.set_ylim(-0.15, 0.4)
-    ax.set_xlabel(f"PC1 (Explained Variance: {int(round(pca.explained_variance_ratio_[0] * 100))}%)")
-    ax.set_ylabel(f"PC2 (Explained Variance: {int(round(pca.explained_variance_ratio_[1] * 100))}%)")
+    ax.set_xlabel(f"PC1 (Explained Variance: {pca.explained_variance_ratio_[0] * 100:.0f}%)")
+    ax.set_ylabel(f"PC2 (Explained Variance: {pca.explained_variance_ratio_[1] * 100:.0f}%)")
     ax.grid(True)
     ax.set_title("Features with Correlation to PCs", fontsize=10)
     ax.text(-0.35, -0.13, f"Angle Between Feature-Type Mean Vectors: {deg}°", fontweight="bold")

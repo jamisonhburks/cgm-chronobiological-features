@@ -4,8 +4,13 @@ from __future__ import annotations
 
 import numpy as np
 from sklearn.calibration import calibration_curve
-from sklearn.metrics import (accuracy_score, auc, classification_report,
-                             log_loss, roc_curve)
+from sklearn.metrics import (
+    accuracy_score,
+    auc,
+    classification_report,
+    log_loss,
+    roc_curve,
+)
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 
 from .data import feature_matrix
