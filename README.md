@@ -23,17 +23,18 @@ separately (see **Data** below). The full open-access article is available on
 | File | Description |
 |------|-------------|
 | `cgm_glycemic_prediction.ipynb` | Jupyter notebook that recapitulates the figures and results for the ML portion of the paper (XGBoost prediction of longer-term glycemic dysregulation). |
-| `src/` | Reusable analysis package the notebook imports from (see below). |
+| `src/cgm_features/` | Reusable analysis package the notebook imports from (see below). |
 | `data_dictionary.xlsx` | Data dictionary for `processed_CGM_data_for_ML.parquet` (52 fields). |
-| `requirements.txt` | Python dependencies and pinned versions. |
+| `pyproject.toml` | Package metadata, dependencies, and tool configuration. |
+| `requirements.txt` | Pinned dependencies for the exact publication environment. |
 
-### Reusable code (`src/`)
+### Reusable code (`cgm_features`)
 
-The notebook is a thin orchestration layer over a small importable package so the same
+The notebook is a thin orchestration layer over a small installable package so the same
 logic can be reused in future analyses:
 
 ```
-src/
+src/cgm_features/
 ├── data.py         # loading, feature-group definitions, feature_matrix, stratified_split
 ├── models.py       # build_classifier (single source of hyperparameters), fit_predict
 ├── evaluation.py   # per_class_roc_auc, cross_validate_report, calibration_points
@@ -41,7 +42,7 @@ src/
 ```
 
 ```python
-from src import load_dataset, split_features_label, stratified_split, build_classifier, cross_validate_report
+from cgm_features import load_dataset, split_features_label, stratified_split, build_classifier, cross_validate_report
 
 data = load_dataset(statistical_only=False)          # or True for the statistical-only Model 1
 X, y = split_features_label(data)
@@ -49,7 +50,8 @@ Xtrain, Xtest, ytrain, ytest = stratified_split(X, y, random_state=42)
 metrics = cross_validate_report(build_classifier(random_state=42), Xtrain, ytrain, Xtest, ytest)
 ```
 
-Run the notebook from the repository root so `import src` resolves.
+Install the package (`pip install -e .`, see **Setup**) so `import cgm_features` resolves
+from anywhere.
 
 ## Data
 
@@ -76,7 +78,13 @@ git clone https://github.com/jamisonhburks/cgm-chronobiological-features.git
 cd cgm-chronobiological-features
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -e ".[notebook]"       # installs the cgm_features package + deps + jupyter
+```
+
+For the exact pinned publication environment instead, use:
+
+```bash
+pip install -r requirements.txt && pip install -e . --no-deps
 ```
 
 Analysis was performed with **Python 3.11.9**. Key library versions: pandas 2.2.2,

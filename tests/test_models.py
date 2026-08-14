@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from src import data, models
+from cgm_features import data, models
 
 
 def test_build_classifier_applies_defaults_and_overrides():

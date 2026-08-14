@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from src import data
+from cgm_features import data
 
 
 def test_feature_groupings_are_disjoint_and_sized():

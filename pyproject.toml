@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cgm-chronobiological-features"
+version = "1.0.0"
+description = "Chronobiologically-informed CGM features for XGBoost prediction of glycemic dysregulation in type-2 diabetes."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jamison H. Burks", email = "jburks@ucsd.edu" }]
+keywords = [
+    "continuous glucose monitoring", "CGM", "diabetes", "chronobiology",
+    "time series", "feature engineering", "XGBoost", "digital health",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Operating System :: OS Independent",
+]
+
+# Core dependencies for the reusable package (src/cgm_features). Floors match the
+# publication's pinned versions (see requirements.txt for the exact pinned env).
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "scikit-learn>=1.5",
+    "xgboost>=2.1",
+    "matplotlib>=3.8",
+    "statsmodels>=0.14",
+    "seaborn>=0.12",
+    "adjustText>=0.8",
+    "pyarrow>=10.0",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyter", "fastparquet"]
+dev = ["pytest>=7.0", "ruff>=0.16"]
+
+[project.urls]
+Homepage = "https://github.com/jamisonhburks/cgm-chronobiological-features"
+Paper = "https://doi.org/10.1371/journal.pdig.0000815"
+Repository = "https://github.com/jamisonhburks/cgm-chronobiological-features"
+Issues = "https://github.com/jamisonhburks/cgm-chronobiological-features/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "W"]  # pycodestyle, pyflakes, isort, pyupgrade
+ignore = ["RUF022"]                  # keep __all__ in logical (not alphabetical) order
+
+[tool.ruff.lint.isort]
+known-first-party = ["cgm_features"]

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from src import evaluation
+from cgm_features import evaluation
 
 
 def test_per_class_roc_auc_perfect_separation():

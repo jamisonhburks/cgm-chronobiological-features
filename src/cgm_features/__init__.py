@@ -2,7 +2,7 @@
 
 Public API for the notebook to import, e.g.::
 
-    from src import (load_dataset, split_features_label, stratified_split,
+    from cgm_features import (load_dataset, split_features_label, stratified_split,
                      build_classifier, fit_predict, per_class_roc_auc,
                      cross_validate_report, plot_calibration_curves)
 """
